@@ -15,11 +15,6 @@
         $login->loginuser();
 
         //Going to ....
-
-        $log = new Login();
-
-        $log->getUser();
-
         
          header("Location: ../index.php?error=none");
 
