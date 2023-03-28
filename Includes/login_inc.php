@@ -17,5 +17,5 @@
         //Going to ....
         
          header("Location: ../index.php?error=none");
-
-    }
+         exit();
+    }       

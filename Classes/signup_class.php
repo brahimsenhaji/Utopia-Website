@@ -6,7 +6,9 @@ class Signup extends Db_PDO_Handler{
      protected function setUser($Uname, $Uemail, $Uphone, $Upassword){
         $stmt = $this->PDOconnect()->prepare('INSERT INTO users (user_name, user_email, user_phone, user_password) VALUES (?,?,?,?);');
 
-        $hashedPWD = md5($Upassword) . "utopia";
+     
+
+        $hashedPWD = password_hash($Upassword, PASSWORD_DEFAULT);
 
         if(!$stmt->execute(array($Uname, $Uemail, $Uphone, $hashedPWD))){
             $stmt = null;
@@ -31,7 +33,7 @@ class Signup extends Db_PDO_Handler{
         }
 
          $resultCheck = false;
-        if($stmt->rowCount() > 0){
+        if(!$stmt->rowCount() > 0){
             $resultCheck = false ;
         }
         else{

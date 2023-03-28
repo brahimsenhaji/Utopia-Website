@@ -16,7 +16,7 @@ class SignupContr extends Signup{
   }
 
   public function signupuser(){
-    if($this->ch() == false){
+    if($this->ch() == true){
         header("Location: ..index.php?nameORemail=taken");
         exit();
     }

@@ -30,21 +30,23 @@ class Login{
 
            if($row = mysqli_fetch_assoc($result)){
 
+            $Db_password = $row['user_password'];
+            
+           $Checkpassword = password_verify($Upassword ,  $Db_password);
                
-               if(md5($Upassword) . "utopia" != md5($row['user_password']) . "utopia"){
-                return false;
-                   header("Location: ../index.php?error=wrongpassword");
-                   exit();
-               }
-               elseif(md5($Upassword) . "utopia" == md5($row['user_password']) . "utopia") {
-                    session_start();
-                    $_SESSION['UserId']  = $row['id'];
-                    $_SESSION['UserName'] = $row['user_name'];
+                   if($Checkpassword == false  ){
+                        header("Location: ../index.php?error=wrongpassword");
+                        exit();
+                   }
+                   elseif($Checkpassword == true  ){
+                        session_start();
+                        $_SESSION['UserId']  = $row['user_id'];
+                        $_SESSION['UserName'] = $row['user_name'];
+                
+                        header("Location: ../index.php?Welcome". $row['user_name']);
+                        exit();
+                   }
                
-                    header("Location: ../index.php?Welcome". $row['user_name']);
-                    exit();
-                   
-               }
 
            }else{
                header("Location: ../index.php?error=nouser");

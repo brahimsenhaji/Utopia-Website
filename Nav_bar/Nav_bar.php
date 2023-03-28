@@ -19,8 +19,8 @@
                     <?php 
                         if(isset($_SESSION['UserId']))
                         {
-                          echo  '<button name="settings" class="settings" value="Log"><i class="fa-regular fa-user"></i></button>';
-                          echo  '<button name="Log_out" class="Log_in" value="Log"><i class="fa-light fa-right-from-bracket"></i></button>';
+                          echo  '<button name="settings" class="settings" value="setting"><i class="fa-regular fa-user"></i></button>';
+                          echo  '<button name="Log_out" class="Log_out" value="out"><i class="fa-solid fa-right-from-bracket"></i></i></button>';
                         }
                         ?>
                 </form>        
