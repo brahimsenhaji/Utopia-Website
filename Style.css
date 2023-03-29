@@ -1,5 +1,7 @@
 @import url('./index.style.css');
 @import url('./Nav_bar/Nav_bar_style.css');
+
+
 ::-webkit-scrollbar{
   width: 0;
 }
