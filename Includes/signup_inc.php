@@ -20,6 +20,6 @@
 
         //Going to ....
 
-         header("Location: ../index.php?error=none");
+         header("Location: ../sign-in-up_page/sign_Index.php?signup=success");
 
     }

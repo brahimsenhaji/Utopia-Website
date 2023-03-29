@@ -32,6 +32,7 @@ class Login{
 
             $Db_password = $row['user_password'];
             
+            //Check if the password from the database and the pasword from the user input are match
            $Checkpassword = password_verify($Upassword ,  $Db_password);
                
                    if($Checkpassword == false  ){
@@ -39,6 +40,7 @@ class Login{
                         exit();
                    }
                    elseif($Checkpassword == true  ){
+                    //start a session to stor the propertys 
                         session_start();
                         $_SESSION['UserId']  = $row['user_id'];
                         $_SESSION['UserName'] = $row['user_name'];
