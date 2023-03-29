@@ -3,15 +3,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Nav_bar_style.css">
-</head>
-<body>
 <header >
             <a href="#" class="Logo"><img src="./Images/Logo3.png" alt="Logo"></a>
             <nav class="Slide">
@@ -53,5 +44,3 @@
             <i class="fa-solid fa-bars"></i>
 </header>
 <script src="./Nav_bar_script.js"></script>
-</body>
-</html>
